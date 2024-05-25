@@ -20,6 +20,7 @@ export const storeSlice = createSlice({
         loadStoreFail: (state) => {
                 state.loading = true
         },
+        
        
         }
     

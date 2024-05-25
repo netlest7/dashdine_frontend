@@ -11,7 +11,7 @@ import { useEffect, useState } from 'react'
 import { Checkbox } from "@/components/ui/checkbox"
 import { loginOwner } from '@/redux/actions/userActions'
 import { useDispatch, useSelector } from 'react-redux'
-import toast from 'react-hot-toast'
+import toast, { Toaster } from 'react-hot-toast'
 
 
 
@@ -31,7 +31,7 @@ const Login = () => {
     useEffect(() => {
       if(isAuthenticated){
         toast.success("Logged In Successfully");
-        navigation("/profile")
+        navigation("/menu")
       }
 
     }, [owner])
@@ -40,7 +40,6 @@ const Login = () => {
     
   return (
     <main className='relative w-screen h-screen flex gap-0 bg-black'>
-   
         <section className='relative w-[50%] m-0 p-0'>
             <img src={loginBgImg} className='absolute w-full h-full object-fill '/>
             <img onClick={() => navigation('/')} src={logo} width={150} height={50} className='absolute top-5 left-5 cursor-pointer'/>
@@ -49,6 +48,8 @@ const Login = () => {
 
         {/* User Input section  */}
         <section className='flex w-[50%] bg-black m-0 flex-col items-center '>
+      <Toaster/>
+
         <h2 className='text-white text-3xl text-center mt-10'>Login</h2>
 
         <Card className='w-[400px] h-[500px] bg-transparent flex flex-col items-center justify-center  bg-gradient-to-b from-[#1E1E1E] to-black-100 mb-9 mt-[20px] '>

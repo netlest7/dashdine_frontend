@@ -1,7 +1,7 @@
 import {createSlice} from "@reduxjs/toolkit";
 
 const initialState = {
-    loading: true,
+    loading: false,
     accessToken: "",
     owner: "",
     error:"",
@@ -26,6 +26,14 @@ export const ownerSlice = createSlice({
             state.isAuthenticated = false
             state.error = action.payload.error
         },
+        ownerLogoutSuccess: (state) => {
+                state.loading = false;
+                state.owner = "";
+                state.accessToken = "";
+                state.isAuthenticated = false;
+                state.error = "";
+
+        },
         loadUserRequest:(state) =>{
             state.loading= true;
         },
@@ -43,6 +51,6 @@ export const ownerSlice = createSlice({
 })
 
 export const {ownerLoginRequest,ownerLoginSuccess,ownerLoginFail
-,loadUserRequest,loadUserSuccess,loadUserFail
+,loadUserRequest,loadUserSuccess,loadUserFail,ownerLogoutSuccess
 } = ownerSlice.actions;
 export default ownerSlice.reducer;

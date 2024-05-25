@@ -4,6 +4,7 @@ import {
     Card,
 } from "@/components/ui/card"
 import { Sidebar } from '../HelpCompoents/Sidebar'
+import { Toaster } from "react-hot-toast"
 
 
 
@@ -18,6 +19,7 @@ const Menu = () => {
         <p className="text-white mb-7">You can either add the food items manually or drop an image of your existing menu. Choose one option here.</p>
 
        <div className={featureAvailable ? 'w-full flex justify-around': "flex justify-center"}>
+        <Toaster/>
        {/* <Card className='w-[40%] bg-transparent flex flex-col items-center cursor-pointer hover:scale-105 bg-gradient-to-b from-yellow-300 to-orange-400 border border-yellow-600'> */}
        <a className=' w-[40%] p-0' href='/menu/manual'>
        <Card className='w-full bg-transparent flex flex-col items-center cursor-pointer hover:scale-105 bg-gradient-to-bl from-slate-600 to-black border'>

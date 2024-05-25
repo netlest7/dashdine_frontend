@@ -10,7 +10,6 @@ const updateStoreSlice = createSlice({
     name:"updateStore",
     initialState,
     reducers: {
-        
         updateMenuRequest: (state) => {
             state.loading = true
             state.menu = ""

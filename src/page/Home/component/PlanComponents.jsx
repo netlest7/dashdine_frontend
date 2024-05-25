@@ -7,6 +7,7 @@ import {
     CardHeader,
     CardTitle,
   } from "@/components/ui/card"
+
 import { Button } from '@/components/ui/button'
   
 
@@ -39,8 +40,9 @@ const PlanComponents = ({planType,planAmount,planFeatures,checkoutHandler}) => {
 </RadioGroup>
 
   </CardContent>
-  <Button onClick={()=> checkoutHandler(planAmount)} className='bg-gradient-to-b from-yellow-300 to-orange-400 border border-yellow-600 rounded-md text-black mb-9'>Choose Plan</Button>
+  <Button onClick={()=> checkoutHandler()} className='bg-gradient-to-b from-yellow-300 to-orange-400 border border-yellow-600 rounded-md text-black mb-9'>Choose Plan</Button>
   {/* <button onClick={(planAmount)=> checkoutHandler(planAmount)} className='bg-gradient-to-b from-yellow-300 to-orange-400 border border-yellow-600 rounded-md text-black mb-9'>Choose Plan</button> */}
+  {/* <button onClick={()=> checkoutHandler()}>Choose Plan</button> */}
 </Card>
 
   )
